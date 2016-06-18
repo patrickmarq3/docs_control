@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/template.xhtml">
+	<ui:define name="corpo">
+		<p:panel header="Cadastrar Novo Usuário" id="cad_usu">
+			<h:panelGrid columns="1">
+				<p:column>
+					<p:outputLabel value="Nome: " />
+					<p:inputText value="#{usuarioControl.usuario.nome}" required="true"
+						maxlength="80" />
+				</p:column>
+				<p:column>
+					<p:outputLabel value="Nível de Acesso: " />
+				</p:column>
+				<p:selectOneMenu value="#{usuarioControl.usuario.nivelAcesso}"
+					required="true">
+					<f:selectItem itemValue="ROLE_ADMINISTRADOR" itemLabel="Admin" />
+					<f:selectItem itemValue="ROLE_GERENCIA" itemLabel="Gerência" />
+				</p:selectOneMenu>
+				<p:column>
+					<p:outputLabel value="E-mail:" />
+					<p:inputText value="#{usuarioControl.usuario.email}"
+						required="true" />
+				</p:column>
+				<p:column>
+					<p:outputLabel value="Senha: " />
+					<p:password value="#{usuarioControl.usuario.senha}" required="true" />
+				</p:column>
+				<p:commandButton value="Salvar" title="save" update="cad_usu"
+					action="#{usuarioControl.incluir}" />
+			</h:panelGrid>
+		</p:panel>
+	</ui:define>
+</ui:composition>
+</html>
