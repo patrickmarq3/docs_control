@@ -2,6 +2,10 @@ html, body, hr {
 	margin:0;
 	padding:0;	
 }
+.erro{
+	color: red;
+	font-size: 18px;
+}
 .wrapper {
 	width:100%;	
 }

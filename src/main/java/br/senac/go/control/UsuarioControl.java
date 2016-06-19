@@ -26,6 +26,7 @@ public class UsuarioControl implements Serializable {
 		}else{
 			
 			UsuarioDao.inserir(usuario);
+			usuario = new Usuario();
 			return "cadastro_usuario.xhtml";
 		}
 		

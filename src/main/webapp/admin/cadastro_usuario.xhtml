@@ -6,11 +6,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<link href="css/estilo.css" rel="stylesheet" />
+</h:head>
 
 <ui:composition template="/template.xhtml">
 	<ui:define name="corpo">
-		<p:panel header="Cadastrar Novo Usuário" id="cad_usu">
-			<h:panelGrid columns="1">
+		<p:panel header="Cadastrar Novo Usuário" id="cad_usu"
+			styleClass="titulo">
+			<h:panelGrid columns="4">
 				<p:column>
 					<p:outputLabel value="Nome: " />
 					<p:inputText value="#{usuarioControl.usuario.nome}" required="true"
@@ -18,12 +22,13 @@
 				</p:column>
 				<p:column>
 					<p:outputLabel value="Nível de Acesso: " />
+					<p:selectOneMenu value="#{usuarioControl.usuario.nivelAcesso}"
+						required="true">
+						<f:selectItem itemValue="ROLE_ADMINISTRADOR"
+							itemLabel="Administrador" />
+						<f:selectItem itemValue="ROLE_GERENCIA" itemLabel="Gerência" />
+					</p:selectOneMenu>
 				</p:column>
-				<p:selectOneMenu value="#{usuarioControl.usuario.nivelAcesso}"
-					required="true">
-					<f:selectItem itemValue="ROLE_ADMINISTRADOR" itemLabel="Admin" />
-					<f:selectItem itemValue="ROLE_GERENCIA" itemLabel="Gerência" />
-				</p:selectOneMenu>
 				<p:column>
 					<p:outputLabel value="E-mail:" />
 					<p:inputText value="#{usuarioControl.usuario.email}"

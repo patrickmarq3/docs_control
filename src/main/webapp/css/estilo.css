@@ -1,3 +1,13 @@
+.titulo {
+	font-family: 'HelveticaNeue', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+}
+
+.ui-panel .ui-panel-titlebar {
+	padding: 0.5em 31em 0.3em;
+	background: transparent;
+}
+
 .ui-widget {
 	font-size: 13px !important;
 }
@@ -7,17 +17,12 @@
 }
 
 .ui-layout-north {
-   z-index:20 !important;
-   overflow:visible !important;
-   border: none !important;
-   padding: 0;
- 	
- 
-  
+	z-index: 20 !important;
+	overflow: visible !important;
+	border: none !important;
+	padding: 0;
 }
 
 .ui-layout-north .ui-layout-unit-content {
-   overflow:visible !important;
-	
+	overflow: visible !important;
 }
-

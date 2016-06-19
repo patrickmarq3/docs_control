@@ -9,15 +9,15 @@
 </h:head>
 <h:body>
 	<div class="span4 sidebar">
-		<div class="well quickSignupForm">
-		
-			<h:panelGroup rendered="#{!empty param.login_error}"> 
+
+		<h:panelGroup rendered="#{!empty param.login_error}" class="erro"> 
 				Erro ao efetuar o login.<br />
 				Motivo: #{SPRING_SECURITY_LAST_EXCEPTION.message}
 			</h:panelGroup>
-			
-			<form id="login" method="post"
-				action="#{request.contextPath}/j_spring_security_check">
+
+		<form id="login" method="post"
+			action="#{request.contextPath}/j_spring_security_check">
+			<div class="well quickSignupForm">
 				<table>
 					<tr>
 						<td>E-mail</td>
@@ -33,11 +33,11 @@
 							class="btn btn-large btn-primary btnSignup" /></td>
 					</tr>
 				</table>
-				<script>
-					document.getElementById("login").j_username.value = "#{SPRING_SECURITY_LAST_USERNAME}";
-				</script>
-			</form>
-		</div>
+			</div>
+			<script>
+				document.getElementById("login").j_username.value = "#{SPRING_SECURITY_LAST_USERNAME}";
+			</script>
+		</form>
 	</div>
 </h:body>
 </html>
