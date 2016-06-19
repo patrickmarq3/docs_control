@@ -7,12 +7,12 @@
 		http://www.springframework.org/schema/security/spring-security.xsd">
 	<http auto-config="true">
 		<intercept-url pattern="/admin/**" access="ROLE_ADMINISTRADOR" />
-		<intercept-url pattern="/gerencia/**"
-			access="ROLE_ADMINISTRADOR, ROLE_GERENCIA" />
-		<form-login login-page="/login.xhtml"
+		<intercept-url pattern="/diretoria/**"
+			access="ROLE_ADMINISTRADOR, ROLE_DIRETORIA" />
+		<form-login login-page="/publico/login.xhtml"
 			always-use-default-target="true" default-target-url="/admin/cadastro_usuario.xhtml"
-			authentication-failure-url="/login.xhtml?login_error=1" />
-		<logout logout-success-url="/login.xhtml" />
+			authentication-failure-url="/publico/login.xhtml?login_error=1" />
+		<logout logout-success-url="/publico/login.xhtml" />
 		<remember-me />
 	</http>
 	<authentication-manager>

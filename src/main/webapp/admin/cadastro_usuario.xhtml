@@ -10,34 +10,36 @@
 	<link href="css/estilo.css" rel="stylesheet" />
 </h:head>
 
-<ui:composition template="/template.xhtml">
+<ui:composition template="/publico/template.xhtml">
 	<ui:define name="corpo">
-		<p:panel header="Cadastrar Novo Usuário" id="cad_usu"
-			styleClass="titulo">
-			<h:panelGrid columns="4">
+		<p:panel header="Cadastrar Novo Usuário" id="cad_usu">
+			<h:panelGrid columns="1" style="font-size:12px">
 				<p:column>
-					<p:outputLabel value="Nome: " />
-					<p:inputText value="#{usuarioControl.usuario.nome}" required="true"
-						maxlength="80" />
+					<p:outputLabel value="Nome:" />
 				</p:column>
+					<p:inputText value="#{usuarioControl.usuario.nome}" required="true"
+						maxlength="80" style="weidth:20px;" />
 				<p:column>
 					<p:outputLabel value="Nível de Acesso: " />
+				</p:column>
 					<p:selectOneMenu value="#{usuarioControl.usuario.nivelAcesso}"
 						required="true">
 						<f:selectItem itemValue="ROLE_ADMINISTRADOR"
 							itemLabel="Administrador" />
-						<f:selectItem itemValue="ROLE_GERENCIA" itemLabel="Gerência" />
+								<f:selectItem itemValue="ROLE_DIRETORIA"
+							itemLabel="Diretoria" />
+						<f:selectItem itemValue="ROLE_COLABORADOR" itemLabel="Colaborador"/>
+						<f:selectItem itemValue="ROLE_PARCEIRO" itemLabel="Parceiro" />
 					</p:selectOneMenu>
-				</p:column>
 				<p:column>
 					<p:outputLabel value="E-mail:" />
+				</p:column>
 					<p:inputText value="#{usuarioControl.usuario.email}"
 						required="true" />
-				</p:column>
 				<p:column>
 					<p:outputLabel value="Senha: " />
-					<p:password value="#{usuarioControl.usuario.senha}" required="true" />
 				</p:column>
+					<p:password value="#{usuarioControl.usuario.senha}" required="true" />
 				<p:commandButton value="Salvar" title="save" update="cad_usu"
 					action="#{usuarioControl.incluir}" />
 			</h:panelGrid>
