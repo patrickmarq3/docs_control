@@ -18,5 +18,9 @@ WITH (
 ALTER TABLE usuario
   OWNER TO postgres;
 
-  insert into usuario(usu_nm, usu_email, usu_senha, usu_nivel_acesso)
-  	values ('Marcos', 'marcos@gmail.com', '12345', 'ROLE_ADMINISTRADOR');
+  
+--  insert into usuario(usu_nm, usu_email, usu_senha, usu_nivel_acesso)
+--  	values ('Marcos', 'marcos@gmail.com', '12345', 'ROLE_ADMINISTRADOR');
+--  	values ('Patrick', 'patrick@gmail.com', '12345', 'ROLE_ADMINISTRADOR');
+--  	values ('Denise', 'denise@gmail.com', '12345', 'ROLE_DIRETORIA');
+--  	values ('Isael', 'isael@gmail.com', '12345', 'ROLE_DIRETORIA');
