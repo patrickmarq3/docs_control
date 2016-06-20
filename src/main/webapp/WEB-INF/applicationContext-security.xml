@@ -6,13 +6,16 @@
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security.xsd">
 	<http auto-config="true">
-		<intercept-url pattern="/admin/**" access="ROLE_ADMINISTRADOR" />
-		<intercept-url pattern="/diretoria/**"
+		<intercept-url pattern="/web/admin/**" access="ROLE_ADMINISTRADOR" />
+		<intercept-url pattern="/web/diretoria/**"
 			access="ROLE_ADMINISTRADOR, ROLE_DIRETORIA" />
-		<form-login login-page="/publico/login.xhtml"
-			always-use-default-target="true" default-target-url="/admin/cadastro_usuario.xhtml"
-			authentication-failure-url="/publico/login.xhtml?login_error=1" />
-		<logout logout-success-url="/publico/login.xhtml" />
+		<intercept-url pattern="/web/colaborador/**" access="ROLE_ADMINISTRADOR, ROLE_DIRETORIA, ROLE_COLABORADOR" />
+		<intercept-url pattern="/web/parceiro/**" access="ROLE_ADMINISTRADOR, ROLE_DIRETORIA, ROLE_PARCEIRO" />
+		<access-denied-handler error-page="/web/publico/acessoNegado.xhtml" />
+		<form-login login-page="/web/publico/login.xhtml"
+			always-use-default-target="true" default-target-url="/web/publico/arquivos.xhtml"
+			authentication-failure-url="/web/publico/login.xhtml?login_error=1" />
+		<logout logout-success-url="/web/publico/login.xhtml" />
 		<remember-me />
 	</http>
 	<authentication-manager>
