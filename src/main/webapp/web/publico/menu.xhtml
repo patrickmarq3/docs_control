@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/web/publico/template.xhtml">
+	<ui:define name="corpo">
+		<p:layoutUnit position="north" >
+				<p:menubar>
+					<p:submenu label="Menu" icon="ui-icon-document">
+						<p:menuitem value="Administrador" url="/web/admin/cadastro_usuario.xhtml"/>
+						<p:menuitem value="Colaborador" url="/web/colaborador/colaborador.xhtml"/>
+						<p:menuitem value="Diretoria" url="/web/diretoria/diretoria.xhtml"/>
+						<p:menuitem value="Parceiro" url="/web/parceiro/parceiro.xhtml"/>
+					</p:submenu>
+				</p:menubar>
+			</p:layoutUnit>
+	</ui:define>
+</ui:composition>
+</html>
