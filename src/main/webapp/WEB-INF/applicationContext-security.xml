@@ -13,7 +13,7 @@
 		<intercept-url pattern="/web/parceiro/**" access="ROLE_ADMINISTRADOR, ROLE_DIRETORIA, ROLE_PARCEIRO" />
 		<access-denied-handler error-page="/web/publico/acessoNegado.xhtml" />
 		<form-login login-page="/web/publico/login.xhtml"
-			always-use-default-target="true" default-target-url="/web/publico/arquivos.xhtml"
+			always-use-default-target="true" default-target-url="/web/publico/menu.xhtml"
 			authentication-failure-url="/web/publico/login.xhtml?login_error=1" />
 		<logout logout-success-url="/web/publico/login.xhtml" />
 		<remember-me />

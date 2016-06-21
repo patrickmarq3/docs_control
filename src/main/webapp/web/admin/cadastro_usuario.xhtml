@@ -41,6 +41,46 @@
 				<p:commandButton value="Salvar" title="save" update="cad_usu" icon="ui-icon-disk"
 					action="#{usuarioControl.incluir}" />
 			</h:panelGrid>
+			<p:dataTable id="usuarios" var="usuarios"
+			value="#{usuarioControl.usuarios}"
+			selection="#{usuarioControl.selectedUsuarios}"
+			rowKey="#{usuarios.id}" style="margin-bottom:0" editable="true">
+
+			<f:facet name="header"> Usuários 
+			<p:commandButton icon="ui-icon-trash" title="delete"
+					action="#{usuarioControl.excluir}"
+					update="questoes" style="float:right;margin-top:-5px;" />
+			</f:facet>
+
+			<p:ajax event="rowEdit"
+				listener="#{usuarioControl.onRowEdit}" update="usuarios" />
+
+			<p:column selectionMode="multiple"
+				style="width:13px;text-align:center" />
+			<p:column headerText="E-mail">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{usuarios.email}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{usuarios.email}" style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			<p:column headerText="Permissões">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{usuarios.nivel_acesso}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{usuarios.nivel_acesso}" style="width:100%" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			<p:column style="width:32px" exportable="false">
+				<p:rowEditor />
+			</p:column>
+		</p:dataTable>
 		</p:panel>
 	</ui:define>
 </ui:composition>
